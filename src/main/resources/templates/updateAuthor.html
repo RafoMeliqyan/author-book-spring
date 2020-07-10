@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Author</title>
+</head>
+<body>
+<a href="/" style="text-decoration: none">Main Page</a> <br>
+Update Author: <br>
+<form action="/updateA" method="post" th:each="author: ${authors}">
+    <input type="text" name="name" placeholder="Please update name" th:value="${author.name}"> <br>
+    <input type="text" name="surname" placeholder="Please update surname" th:value="${author.surname}"> <br>
+    <input type="text" name="email" placeholder="Please update email" th:value="${author.email}"> <br>
+    <select name="gender" th:value="${author.gender}">
+        <option value="MALE">MALE</option>
+        <option value="FEMALE">FEMALE</option>
+    </select> <br>
+    <input type="text" name="bio" placeholder="Please update bio" th:value="${author.bio}"><br>
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>
