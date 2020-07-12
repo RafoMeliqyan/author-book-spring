@@ -10,7 +10,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Controller
@@ -23,22 +22,23 @@ public class MainController {
     private BookRepository bookRepository;
 
     @GetMapping("/")
-    public String homePage(ModelMap map) {
+    public String homePage(ModelMap map,@RequestParam(name = "msg", required = false) String msg) {
         List<Author> all = authorRepository.findAll();
         map.addAttribute("authors", all);
+        map.addAttribute("msg", msg);
         return "home";
     }
 
     @PostMapping("/addAuthor")
     public String addAuthor(@ModelAttribute Author author) {
         authorRepository.save(author);
-        return "redirect:/";
+        return "redirect:/?msg=Author was added";
     }
 
     @PostMapping("/addBook")
     public String addBook(@ModelAttribute Book book) {
         bookRepository.save(book);
-        return "redirect:/";
+        return "redirect:/?msg=Book was added";
     }
 
     @GetMapping("/authors")
@@ -86,13 +86,13 @@ public class MainController {
     @PostMapping("/updateB")
     public String updateB(@ModelAttribute Book book) {
         bookRepository.save(book);
-        return "redirect:/";
+        return "redirect:/?msg=Book was updated";
     }
 
     @PostMapping("/updateA")
     public String updateA(@ModelAttribute Author author) {
         authorRepository.save(author);
-        return "redirect:/";
+        return "redirect:/?msg=Author was updated";
     }
 
 }

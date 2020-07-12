@@ -6,6 +6,7 @@
 </head>
 <body>
 Welcome Spring!!! <br>
+<h3 th:text="${msg}" th:if="${msg != null}"></h3> <br>
 Add Author:
 <form action="/addAuthor" method="post">
     <input type="text" name="name" placeholder="Please input name"> <br>

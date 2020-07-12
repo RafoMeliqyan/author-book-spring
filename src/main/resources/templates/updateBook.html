@@ -11,7 +11,7 @@ Update Book:
     <input type="text" name="title" placeholder="Please input title" th:value="${book.title}"> <br>
     <input type="text" name="description" placeholder="Please input description" th:value="${book.description}"> <br>
     <input type="number" name="price" placeholder="Please input price" th:value="${book.price}"> <br>
-    <select name="authorId" th:value="${book.authorId}">
+    <select name="authorId">
         <option th:each="author: ${allAuthors}" th:text="${author.name}" th:value="${author.id}"></option>
     </select> <br>
     <input type="submit" value="Update">
