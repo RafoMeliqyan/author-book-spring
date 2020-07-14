@@ -8,7 +8,7 @@
 Welcome Spring!!! <br>
 <h3 th:text="${msg}" th:if="${msg != null}"></h3> <br>
 Add Author:
-<form action="/addAuthor" method="post">
+<form action="/saveAuthor" method="post">
     <input type="text" name="name" placeholder="Please input name"> <br>
     <input type="text" name="surname" placeholder="Please input surname"> <br>
     <input type="text" name="email" placeholder="Please input email"> <br>
@@ -22,7 +22,7 @@ Add Author:
 
 <br>
 Add Book:
-<form action="/addBook" method="post">
+<form action="/saveBook" method="post">
     <input type="text" name="title" placeholder="Please input title"> <br>
     <textarea name="description" placeholder="Please input description"></textarea> <br>
     <input type="number" name="price" placeholder="Please input price"> <br>

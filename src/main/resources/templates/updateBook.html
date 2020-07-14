@@ -7,7 +7,7 @@
 <body>
 <a href="/" style="text-decoration: none">Main Page</a> <br>
 Update Book:
-<form action="/updateB" method="post" th:each="book: ${allBooks}">
+<form action="/saveBook" method="post" th:each="book: ${allBooks}">
     <input type="text" name="title" placeholder="Please input title" th:value="${book.title}"> <br>
     <input type="text" name="description" placeholder="Please input description" th:value="${book.description}"> <br>
     <input type="number" name="price" placeholder="Please input price" th:value="${book.price}"> <br>

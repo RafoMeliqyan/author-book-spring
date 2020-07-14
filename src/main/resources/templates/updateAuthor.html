@@ -7,7 +7,7 @@
 <body>
 <a href="/" style="text-decoration: none">Main Page</a> <br>
 Update Author: <br>
-<form action="/updateA" method="post" th:each="author: ${authors}">
+<form action="/saveAuthor" method="post" th:each="author: ${authors}">
     <input type="text" name="name" placeholder="Please update name" th:value="${author.name}"> <br>
     <input type="text" name="surname" placeholder="Please update surname" th:value="${author.surname}"> <br>
     <input type="text" name="email" placeholder="Please update email" th:value="${author.email}"> <br>
